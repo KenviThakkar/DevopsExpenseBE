@@ -45,4 +45,4 @@ app.include_router(expense_router)
 
 @app.get("/")
 def test():
-    return {"message": "ExpenseTracker  Backend RunningssssssssSSSSSS"}
+    return {"message": "ExpenseTracker  Backend Runningssssssssss"}
