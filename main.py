@@ -16,38 +16,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# @app.middleware("http")
-# async def auth_middleware(request: Request, call_next):
-#     if request.method == "OPTIONS":
-#         return await call_next(request)
-
-#     if request.url.path in ["/", "/login", "/register", "/docs", "/openapi.json","/redoc"]:
-#         return await call_next(request)
-
-#     token = request.headers.get("Authorization")
-
-#     if not token:
-#         return JSONResponse(content={"message": "Token missing"}, status_code=401)
-
-#     token = token.replace("Bearer ", "")
-#     payload = decode_access_token(token, "your_secret_key")
-
-#     if not payload:
-#         return JSONResponse(content={"message": "Invalid token"}, status_code=403)
-
-#     request.state.user = payload
-#     return await call_next(request)
-
-
-
-
-
-
-
-
-
-
-
 
 @app.middleware("http")
 async def auth_middleware(request: Request, call_next):
